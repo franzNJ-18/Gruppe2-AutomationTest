@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class SynchronizationUtilsGE {
+public class SynchronizationUtils {
 
     public static void waitForClickable(WebDriver pDriver, WebElement pWebElement, long pTimer) {
         WebDriverWait wait = new WebDriverWait(pDriver, Duration.ofSeconds(pTimer));

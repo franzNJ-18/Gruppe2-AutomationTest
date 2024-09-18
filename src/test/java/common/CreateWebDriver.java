@@ -5,29 +5,22 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.logging.LogType;
-import org.openqa.selenium.logging.LoggingPreferences;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.LocalFileDetector;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.File;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
 
-public class CreateWebDriverGE {
+public class CreateWebDriver {
 
     private static final ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
-    private static CreateWebDriverGE instance = null;
+    private static CreateWebDriver instance = null;
 
-    public static synchronized CreateWebDriverGE getInstance() {
+    public static synchronized CreateWebDriver getInstance() {
         if (instance == null) {
-            instance = new CreateWebDriverGE();
+            instance = new CreateWebDriver();
         }
 
         return instance;
@@ -47,7 +40,6 @@ public class CreateWebDriverGE {
 
     public WebDriver createWebDriver(String pBrowserName) throws MalformedURLException {
         WebDriver aDriver = null;
-        File targetFolder;
         switch (pBrowserName.toUpperCase()) {
             case "CHROME":
                 WebDriverManager.chromedriver().setup();
