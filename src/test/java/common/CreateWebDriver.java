@@ -38,7 +38,7 @@ public class CreateWebDriver {
         }
     }
 
-    public WebDriver createWebDriver(String pBrowserName) throws MalformedURLException {
+    public WebDriver createWebDriver(String pBrowserName){
         WebDriver aDriver = null;
         switch (pBrowserName.toUpperCase()) {
             case "CHROME":
@@ -46,8 +46,6 @@ public class CreateWebDriver {
                 ChromeOptions options = new ChromeOptions();
                 Map<String, Object> prefs = new HashMap<>();
                 prefs.put("profile.default_content_setting_values.notifications", 1);
-                options.addArguments("--use-fake-ui-for-media-stream");
-                options.addArguments("--use-fake-device-for-media-stream");
                 options.setAcceptInsecureCerts(true);
                 options.setExperimentalOption("prefs", prefs);
                 options.addArguments("--remote-allow-origins=*");
