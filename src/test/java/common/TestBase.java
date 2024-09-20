@@ -2,6 +2,7 @@ package common;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -12,16 +13,17 @@ import java.net.MalformedURLException;
 
 public abstract class TestBase {
 
-    protected WebDriver driver;
+    public static WebDriver driver;
 
     protected DevTools devTools;
 
+
     @BeforeClass
     protected void setUp() throws MalformedURLException {
-        String aDriverType = System.getProperty("driverType","CHROME");
+        String aDriverType = System.getProperty("driverType","EDGE");
         CreateWebDriver.getInstance().createWebDriver(aDriverType);
         WebDriver aDriver = CreateWebDriver.getInstance().getWebDriver();
-        aDriver.get("http://10.40.226.38/BC_Demo/index.php");
+        aDriver.get("http://10.40.226.38/BC_Team_2/index.php");
         driver =aDriver;
     }
 
@@ -39,9 +41,23 @@ public abstract class TestBase {
         System.out.println("*** Test abgeschlossen: " + aTestDescription + " ***");
     }
 
-    @AfterClass(alwaysRun = true)
-    public void tearDown() {
-        CreateWebDriver.getInstance().closeWebDriver();
-        driver.quit();
+
+//    @AfterClass(alwaysRun = true)
+//    public void tearDown() {
+//        CreateWebDriver.getInstance().closeWebDriver();
+//        driver.quit();
+//    }
+
+    // Amplifier methods
+    protected WebDriverWait wait;
+
+    public void maximizeWindow() {
+        driver.manage().window().maximize();
     }
+
+    public void captureScreenshot(String fileName) {
+        // Implement screenshot capture logic
+    }
+
+    //
 }

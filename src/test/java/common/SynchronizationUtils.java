@@ -1,6 +1,7 @@
 package common;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -43,5 +44,15 @@ public class SynchronizationUtils {
     public static void waitForAlert(WebDriver pDriver, long aDuration) {
         WebDriverWait aWait = new WebDriverWait(pDriver, Duration.ofSeconds(aDuration));
         aWait.until(ExpectedConditions.alertIsPresent());
+    }
+
+    public static void staleElementSolution(WebDriver pDriver, WebElement webElement) {
+        Duration timeout = Duration.ofSeconds(30);
+        new WebDriverWait(pDriver, timeout)
+                .ignoring(StaleElementReferenceException.class)
+                .until((WebDriver d) -> {
+                    webElement.click();
+                    return true;
+                });
     }
 }
