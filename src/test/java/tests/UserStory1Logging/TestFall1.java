@@ -1,6 +1,7 @@
 package tests.UserStory1Logging;
 
 import common.TestBase;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjects.HomePage;
@@ -10,6 +11,7 @@ public class TestFall1 extends TestBase {
 
     String username = "Franz";
     String password = "1234567";
+
 
     @Test(description = "Testfall 1 = ")
     public void Testfall1() {
