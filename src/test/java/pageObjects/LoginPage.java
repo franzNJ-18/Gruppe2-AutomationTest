@@ -22,6 +22,18 @@ public class LoginPage {
     @FindBy(xpath = "//a[@href='register.php']")
     WebElement registrationButton;
 
+    @FindBy(xpath = "//a[@onclick='displayLoginForm()']")
+    public WebElement loginButton;
+
+    @FindBy(xpath = "//*[@id=\"accountbar\"]/table/tbody/tr[2]/td/a[2]")
+    public WebElement logoutButton;
+
+
+    @FindBy(xpath = "")
+    WebElement errorMessage;
+
+
+
     public LoginPage(WebDriver pDriver) {
         driver = pDriver;
         PageFactory.initElements(driver, this);
