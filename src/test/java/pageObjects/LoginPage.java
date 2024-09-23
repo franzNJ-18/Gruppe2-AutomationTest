@@ -19,6 +19,9 @@ public class LoginPage {
     @FindBy(xpath = "//input[@id='login-submit']")
     WebElement loginSummitButton;
 
+    @FindBy(xpath = "//a[@href='register.php']")
+    WebElement registrationButton;
+
     @FindBy(xpath = "//a[@onclick='displayLoginForm()']")
     public WebElement loginButton;
 
@@ -28,6 +31,7 @@ public class LoginPage {
 
     @FindBy(xpath = "")
     WebElement errorMessage;
+
 
 
     public LoginPage(WebDriver pDriver) {
@@ -44,17 +48,9 @@ public class LoginPage {
     }
 
     public void clickLoginSubmit() {
-        loginSummitButton.click();
-    }
+        loginSummitButton.click();}
 
-    public void verifyErrorMessage() {
-        SynchronizationUtils.waitForVisibility(driver, errorMessage, 10);
-
-    }
-
-    public void logout() {
-        logoutButton = driver.findElement(By.xpath("//button[@id='logout']"));
-        logoutButton.click();
-    }
+    public void clickRegistrationLink() {
+        registrationButton.click();}
 
 }

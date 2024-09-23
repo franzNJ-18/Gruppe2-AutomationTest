@@ -44,18 +44,6 @@ public class CreateWebDriver {
     public WebDriver createWebDriver(String pBrowserName){
         WebDriver aDriver = null;
         switch (pBrowserName.toUpperCase()) {
-//            case "CHROME":
-//                WebDriverManager.chromedriver().setup();
-//                ChromeOptions options = new ChromeOptions();
-//                Map<String, Object> prefs = new HashMap<>();
-//                prefs.put("profile.default_content_setting_values.notifications", 1);
-//                options.setAcceptInsecureCerts(true);
-//                options.setExperimentalOption("prefs", prefs);
-//                options.addArguments("--remote-allow-origins=*");
-//                DesiredCapabilities cp = new DesiredCapabilities();
-//                cp.setCapability(ChromeOptions.CAPABILITY, options);
-//                options.merge(cp);
-//                aDriver = new ChromeDriver(options);
             case "EDGE":
                 WebDriverManager.edgedriver().setup();
                 EdgeOptions options = new EdgeOptions();
