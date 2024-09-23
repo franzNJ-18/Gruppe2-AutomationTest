@@ -16,6 +16,7 @@ public class TestFall1 extends TestBase {
         clickLoginButton();
         sendKeysToLogin(username);
         sendKeysToPassword(password);
+
     }
 
     public void clickLoginButton() {

@@ -18,10 +18,10 @@ public abstract class TestBase {
 
     @BeforeClass
     protected void setUp() throws MalformedURLException {
-        String aDriverType = System.getProperty("driverType","CHROME");
+        String aDriverType = System.getProperty("driverType","EDGE");
         CreateWebDriver.getInstance().createWebDriver(aDriverType);
         WebDriver aDriver = CreateWebDriver.getInstance().getWebDriver();
-        aDriver.get("http://10.40.226.38/BC_Demo/index.php");
+        aDriver.get("http://10.40.226.38/BC_Team_2/index.php");
         driver =aDriver;
     }
 
