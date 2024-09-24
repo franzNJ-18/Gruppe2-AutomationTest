@@ -33,7 +33,6 @@ public class LoginPage {
     WebElement errorMessage;
 
 
-
     public LoginPage(WebDriver pDriver) {
         driver = pDriver;
         PageFactory.initElements(driver, this);
