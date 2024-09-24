@@ -2,11 +2,14 @@ package tests.UserStory4Registrierung;
 
 import common.TestBase;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 import pageObjects.RegistrierungPage;
+import reporting.*;
 
+@Listeners(ExtentTestListener.class)
 public class TC001VerifyingSuccessfulAccountCreation extends TestBase {
     String username = "Üser123";
     String password = "Ocaso18!96";
@@ -14,13 +17,26 @@ public class TC001VerifyingSuccessfulAccountCreation extends TestBase {
 
     @Test(description = "For TC001: Verifying successful account creation with valid credentials.")
     public void TestCase1() {
+        ReportHelper.createInfoLog("Step 1:","Going to register page");
         clickRegisterButton();
+        ReportHelper.createInfoLog("Step 2:","Sending keys for Register");
+        String[][] aInfos = {
+                {"Username", username},
+                {"Password", password},
+                {"Confirm Password", confirmPassword}
+        };
+        ReportHelper.createTable(aInfos);
         sendKeysToUsername(username);
         sendKeysToPassword(password);
         sendKeysToConfirmPassword(confirmPassword);
+        ReportHelper.createInfoLog("Step 3:","Checking AGB");
         checkAGB();
+        ReportHelper.createInfoLog("Step 4:","Clicking Registration Button");
         clickRegistration();
-        Assert.assertEquals(getTextOfSuccessfulReg(),"Deine Registrierung war erfolgreich!");
+        // Screenshot of confirmation
+        String aScreenshot = CaptureScreen.getSeleniumScreenshotAsBase64();
+        ReportHelper.addScreenshot("Registration erfolgreich Modal PopUp", aScreenshot);
+        Assert.assertEquals(getTextOfSuccessfulReg(),"Deine Registrierung war erfolgreich!", "The test is successful");
     }
 
     public void clickRegisterButton() {
