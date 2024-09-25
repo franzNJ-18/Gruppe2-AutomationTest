@@ -42,11 +42,11 @@ public abstract class TestBase {
     }
 
 
-//    @AfterClass(alwaysRun = true)
-//    public void tearDown() {
-//        CreateWebDriver.getInstance().closeWebDriver();
-//        driver.quit();
-//    }
+     @AfterClass(alwaysRun = true)
+     public void tearDown() {
+        CreateWebDriver.getInstance().closeWebDriver();
+          driver.quit();
+    }
 
     // Amplifier methods
     protected WebDriverWait wait;

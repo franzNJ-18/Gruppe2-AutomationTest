@@ -19,7 +19,7 @@ public class ExtentReportsManager {
         System.setProperty("org.freemarker.loggerLibrary", "none");
 
         // New Spark Reporter
-        ExtentSparkReporter aSparkReporter = new ExtentSparkReporter("target/reports/TestReportUserStory1.html");
+        ExtentSparkReporter aSparkReporter = new ExtentSparkReporter("target/reports/TestReportAllUserStories.html");
 
         // Add Reporter to extent reports and also set some configuration
         extent = new ExtentReports();

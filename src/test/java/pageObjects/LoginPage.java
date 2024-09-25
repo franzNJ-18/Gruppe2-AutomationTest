@@ -13,8 +13,30 @@ public class LoginPage {
     @FindBy(xpath = "//input[@id='login-username']")
     WebElement username;
 
+    @FindBy(xpath = "//*[text()='Benutzername oder Passwort falsch']")
+    public WebElement benutzernameOderPasswortFalschMeldung;
+
+    @FindBy(xpath = "//div[@id='overlay']")
+    public WebElement ausserhalbDerLoginDialog;
+
+    @FindBy(xpath = "//span[text()='Dieser User existiert nicht.']")
+    public WebElement userNichtExistiertMeldung;
+
+
+    @FindBy(xpath = "//a[text()='Profil']")
+    public WebElement profilOptionAfterLogin;
+
+    @FindBy(xpath = "//a[text()='Logout']")
+    public WebElement logoutOptionAfterLogin;
+
     @FindBy(xpath = "//input[@id='login-password']")
     WebElement password;
+
+    @FindBy(xpath = "//a[@onclick='displayLoginForm()']")
+    public WebElement loginButton;
+
+    @FindBy(xpath = "//*[@id=\"accountbar\"]/table/tbody/tr[2]/td/a[2]")
+    public WebElement logoutButton;
 
     @FindBy(xpath = "//input[@id='login-submit']")
     WebElement loginSummitButton;

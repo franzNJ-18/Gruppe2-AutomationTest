@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Test Suite User Story 4">
+
+    <listeners>
+        <listener class-name="reporting.ExtentTestListener"></listener>
+    </listeners>
+
+    <test name="User Story 4 Registration">
+        <classes>
+            <class name="tests.US_005_Warenkorb.TC_001_AddItemToCart"/>
+            <class name="tests.US_005_Warenkorb.TC_002_ViewCartWithMultipleItems"/>
+            <class name="tests.US_005_Warenkorb.TC_003_DeleteItemsFromCart"/>
+            <class name="tests.US_005_Warenkorb.TC_004_UpdateItemInCart"/>
+            <class name="tests.US_005_Warenkorb.TC_005_CartRetainsItemsAfterLogIn"/>
+            <class name="tests.US_005_Warenkorb.TC_006_CartEmptyAfterLogOut"/>
+            <class name="tests.US_005_Warenkorb.TC_007_BadgeShowsCorrectNumber"/>
+            <class name="tests.US_005_Warenkorb.TC_008_TotalPriceUpdatesCorrectly"/>
+            <class name="tests.US_005_Warenkorb.TC_009_CartAllowsMaximumNumberStock"/>
+            <class name="tests.US_005_Warenkorb.TC_010_CartEmptyNoItemsAdded"/>
+        </classes>
+    </test>
+
+</suite>

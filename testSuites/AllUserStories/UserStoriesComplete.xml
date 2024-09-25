@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Test Suite User Story 4">
-
-    <listeners>
-        <listener class-name="reporting.ExtentTestListener"></listener>
-    </listeners>
-
-    <test name="User Story 4 Registration">
-        <classes>
-            <class name="tests.UserStory4Registrierung.TC001VerifyingSuccessfulAccountCreation"/>
-            <class name="tests.UserStory4Registrierung.TC002HandlingDuplicateUsername"/>
-            <class name="tests.UserStory4Registrierung.TC003VerifyingPasswordMismatch"/>
-            <class name="tests.UserStory4Registrierung.TC004HandlingUnacceptedTerms"/>
-            <class name="tests.UserStory4Registrierung.TC005HandlingInvalidShortPasswordCriteria"/>
-            <class name="tests.UserStory4Registrierung.TC006HandlingInvalidLongPasswordCriteria"/>
-            <class name="tests.UserStory4Registrierung.TC007HandlingInvalidLongUsernameCriteria"/>
-            <class name="tests.UserStory4Registrierung.TC008HandlingInvalidShortUsernameCriteria"/>
-            <class name="tests.UserStory4Registrierung.TC009HandlingInvalidUsernameFormat"/>
-            <class name="tests.UserStory4Registrierung.TC010VerifyingTermsLink"/>
-        </classes>
-    </test>
-
+<suite name="User Stories 4,5 and 1 mit Amplifier and without amplifier">
+    <suite-files >
+        <suite-file path="UserStory1Amplifier/AllTests.xml"/>
+        <suite-file path="UserStory1WithoutAmplifier/AllTests.xml"/>
+        <suite-file path="UserStory4/AllTests.xml"/>
+        <suite-file path="UserStory5/AllTests.xml"/>
+    </suite-files>
 </suite>

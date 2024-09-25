@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Test Suite User Story 4">
+
+    <listeners>
+        <listener class-name="reporting.ExtentTestListener"></listener>
+    </listeners>
+
+    <test name="User Story 4 Registration">
+        <classes>
+            <class name="tests.US_001_Login.TC_001_Benutzername_richtig_Passwort_richtig"/>
+            <class name="tests.US_001_Login.TC_002_Benutzername_falsch_Passwort_richtig"/>
+            <class name="tests.US_001_Login.TC_003_Benutzername_richtig_Passwort_falsch"/>
+            <class name="tests.US_001_Login.TC_004_Benutzername_falsch_Passwort_falsch"/>
+            <class name="tests.US_001_Login.TC_005_Benutzer_existiert_nicht_im_System"/>
+            <class name="tests.US_001_Login.TC_006_Erfolgreiches_Logout"/>
+            <class name="tests.US_001_Login.TC_007_Schließen_des_Login_Dialogs"/>
+        </classes>
+    </test>
+
+</suite>
