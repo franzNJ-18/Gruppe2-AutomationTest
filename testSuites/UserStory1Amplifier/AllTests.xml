@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Test Suite User Story 4">
+
+    <listeners>
+        <listener class-name="reporting.ExtentTestListener"></listener>
+    </listeners>
+
+    <test name="User Story 4 Registration">
+        <classes>
+            <class name="tests.UserStory1Login.TC001SuccesfullLogin"/>
+            <class name="tests.UserStory1Login.TC002IncorrectPassword"/>
+            <class name="tests.UserStory1Login.TC003UsernameNonExistent"/>
+            <class name="tests.UserStory1Login.TC004SuccessfulLoginAndLogout"/>
+            <class name="tests.UserStory1Login.TC005NoCredentialsEntered"/>
+            <class name="tests.UserStory1Login.TC006LoginAppearInEachPage"/>
+            <class name="tests.UserStory1Login.TC007PlaceholdersinLoginModalDialogAmplifier"/>
+            <class name="tests.UserStory1Login.TC008LoginModalDialogDissapearsByClickingOutside"/>
+        </classes>
+    </test>
+
+</suite>
