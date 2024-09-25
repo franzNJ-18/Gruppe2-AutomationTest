@@ -65,4 +65,6 @@ public class ReportHelper {
             ExtentTestManager.getTest().log(Status.INFO, aHtmlImage);
         }
     }
+
+
 }

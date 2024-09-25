@@ -53,9 +53,9 @@ public class CreateWebDriver {
         }
         aDriver.manage().window().maximize();
 
-        aDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        aDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 
-        aDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        aDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
 
         webDriver.set(aDriver);
         return aDriver;

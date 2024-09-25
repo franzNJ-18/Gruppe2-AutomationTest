@@ -33,7 +33,6 @@ public class TC001VerifyingSuccessfulAccountCreation extends TestBase {
         checkAGB();
         ReportHelper.createInfoLog("Step 4:","Clicking Registration Button");
         clickRegistration();
-        // Screenshot of confirmation
         String aScreenshot = CaptureScreen.getSeleniumScreenshotAsBase64();
         ReportHelper.addScreenshot("Registration erfolgreich Modal PopUp", aScreenshot);
         Assert.assertEquals(getTextOfSuccessfulReg(),"Deine Registrierung war erfolgreich!", "The test is successful");

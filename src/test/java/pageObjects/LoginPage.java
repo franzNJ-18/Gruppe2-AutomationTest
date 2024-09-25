@@ -22,6 +22,15 @@ public class LoginPage {
     @FindBy(xpath = "//a[@href='register.php']")
     WebElement registrationButton;
 
+    @FindBy(id = "loginContainer")
+    WebElement loginModalTitle;
+
+    @FindBy(id = "login-username-msg")
+    WebElement messageUnderUsername;
+
+    @FindBy(id = "login-password-msg")
+    WebElement messageUnderPassword;
+
     public LoginPage(WebDriver pDriver) {
         driver = pDriver;
         PageFactory.initElements(driver, this);
@@ -31,12 +40,33 @@ public class LoginPage {
         username.sendKeys(strUserName);
     }
 
+    public Boolean presenceOfLoginTitle(){
+        return loginModalTitle.isDisplayed();
+    }
     public void setPassword(String strPassword) {
         password.sendKeys(strPassword);
     }
 
+    public String getUserNamePlaceholder() {
+        return username.getAttribute("placeholder");
+    }
+
+    public String getPasswordPlaceholder() {
+        return password.getAttribute("placeholder");
+    }
+
     public void clickLoginSubmit() {
         loginSummitButton.click();}
+
+    public String getUsernameErrorMessage(){
+        SynchronizationUtils.waitForVisibility(driver,messageUnderUsername,10);
+        return messageUnderUsername.getText();
+    }
+
+    public String getPasswordErrorMessage(){
+        SynchronizationUtils.waitForVisibility(driver,messageUnderPassword,10);
+        return messageUnderPassword.getText();
+    }
 
     public void clickRegistrationLink() {
         registrationButton.click();}
