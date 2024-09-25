@@ -2,6 +2,7 @@ package pageObjects;
 
 import common.SynchronizationUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,10 +12,10 @@ public class LoginPage {
     WebDriver driver;
 
     @FindBy(xpath = "//input[@id='login-username']")
-    WebElement username;
+    public WebElement username;
 
     @FindBy(xpath = "//input[@id='login-password']")
-    WebElement password;
+    public WebElement password;
 
     @FindBy(xpath = "//input[@id='login-submit']")
     WebElement loginSummitButton;
@@ -28,6 +29,22 @@ public class LoginPage {
     @FindBy(xpath = "//*[@id=\"accountbar\"]/table/tbody/tr[2]/td/a[2]")
     public WebElement logoutButton;
 
+    @FindBy(xpath = "//span[text()='Dieser User existiert nicht.']")
+    public WebElement userNichtExistiertMeldung;
+
+    @FindBy(xpath = "//a[text()='Profil']")
+    public WebElement profilOptionAfterLogin;
+
+    @FindBy(xpath = "//a[text()='Logout']")
+    public WebElement logoutOptionAfterLogin;
+
+    @FindBy(xpath = "//*[text()='Benutzername oder Passwort falsch']")
+    public WebElement benutzernameOderPasswortFalschMeldung;
+
+    @FindBy(xpath = "//div[@id='overlay']")
+    public WebElement ausserhalbDerLoginDialog;
+
+
 
     @FindBy(xpath = "")
     WebElement errorMessage;
@@ -39,7 +56,7 @@ public class LoginPage {
     }
 
     public void setUserName(String strUserName) {
-        username.sendKeys(strUserName);
+        username.sendKeys(strUserName + Keys.SHIFT);
     }
 
     public void setPassword(String strPassword) {
